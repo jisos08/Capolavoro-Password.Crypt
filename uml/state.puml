@@ -1,0 +1,20 @@
+@startuml
+[*] --> Disconnesso
+
+state Disconnesso {
+  [*] --> InAttesaCredenziali
+  InAttesaCredenziali --> Verificando : inserimento dati
+  Verificando --> InAttesaCredenziali : password errata
+  Verificando --> Connesso : password corretta
+}
+
+state Connesso {
+  [*] --> VisualizzazioneAccount
+  VisualizzazioneAccount --> ModificaDati : click "Modifica"
+  ModificaDati --> VisualizzazioneAccount : salvataggio
+  VisualizzazioneAccount --> [*] : logout
+}
+
+Connesso --> Disconnesso : timeout o logout
+Disconnesso --> [*] : chiusura app
+@enduml

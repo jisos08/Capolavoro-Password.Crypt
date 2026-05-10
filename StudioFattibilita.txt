@@ -1,0 +1,112 @@
+ STUDIO DI FATTIBILITÀ
+ Obiettivo
+
+Verificare se è possibile realizzare un sistema di gestione password sicuro utilizzando Java, analizzando:
+
+    aspetti tecnici
+    economici
+    temporali
+    operativi
+
+ 1. Fattibilità tecnica
+
+Il progetto è tecnicamente realizzabile perché:
+ Tecnologie utilizzate
+
+    Java (linguaggio principale)
+    Swing (interfaccia grafica)
+    Librerie standard di crittografia (javax.crypto)
+    FlatLaf (grafica moderna)
+
+ Funzionalità implementabili
+
+    Crittografia AES → già presente (Crypto)
+    Gestione file → (Storage)
+    Interfaccia grafica → (LoginFrame, ManagerFrame)
+
+ Complessità
+
+    Media (non banale ma gestibile)
+    Nessun bisogno di:
+        database
+        server
+        connessione internet
+
+ Conclusione tecnica: ALTA fattibilità
+ 2. Fattibilità economica
+ Costi
+
+    Software: gratuito (Java + librerie open source)
+    Sviluppo: individuale
+    Nessun hardware speciale
+
+ Costo totale: 0€
+
+ Conclusione economica: MOLTO ALTA
+ 3. Fattibilità temporale
+ Tempi stimati
+
+    Interfaccia grafica: 1–2 giorni
+    Logica salvataggio: 1 giorno
+    Crittografia: 1 giorno
+    Test e miglioramenti: 1–2 giorni
+
+ Totale: circa 4–6 giorni
+ Complessità del tempo
+
+    Suddivisibile in parti
+    Sviluppo incrementale
+
+ Conclusione temporale: ALTA
+ 4. Fattibilità operativa
+
+Il sistema è utilizzabile facilmente perché:
+ Facilità d’uso
+
+    Inserimento password semplice
+    Interfaccia chiara
+    Nessuna configurazione richiesta
+
+ Accessibilità
+
+    Basta avviare il programma
+    Nessuna installazione complessa
+
+ Conclusione operativa: ALTA
+ 5. Fattibilità di sicurezza
+ Aspetti positivi
+
+    Uso di:
+        PBKDF2 (derivazione chiave)
+        AES (crittografia)
+    Dati non salvati in chiaro
+
+ Limiti
+
+    Salt fisso (non ideale)
+    AES senza modalità avanzata (GCM/CBC)
+    Nessun controllo tentativi login
+
+ Conclusione sicurezza: MEDIA (migliorabile)
+ 6. Rischi e criticità
+
+    Perdita della master password → dati irrecuperabili
+    File corrotto → perdita dati
+    Sicurezza non a livello professionale
+
+ 7. Miglioramenti possibili
+
+    Salt casuale per ogni utente
+    Nascondere password nella tabella
+    Backup automatico
+    Autenticazione a più fattori
+    Uso di AES-GCM
+
+ CONCLUSIONE GENERALE
+
+Il progetto SafeVault risulta:
+
+     Tecnologicamente fattibile
+     Economicamente sostenibile
+     Realizzabile in tempi brevi
+     Con margini di miglioramento sulla sicurezza

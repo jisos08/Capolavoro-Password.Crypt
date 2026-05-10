@@ -1,0 +1,22 @@
+@startuml
+actor Utente
+participant "Applicazione" as App
+participant "Gestore Password" as GP
+
+Utente -> App: Avvio applicazione
+Utente -> App: Inserisci password
+
+App -> App: Verifica password
+alt Password errata
+    App -> Utente: Password errata, reinserisci
+else Password corretta
+    App -> GP: Entra nel gestore password
+
+    alt Utente già entrato 1 volta
+        Utente -> GP: Inserisci le password
+    else Primo accesso
+        Utente -> GP: Crea password\nCrea nome sito
+    end
+end
+
+@enduml

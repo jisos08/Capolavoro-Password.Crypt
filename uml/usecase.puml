@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+
+actor " (Utente)" as giovanni
+
+rectangle "Sistema di Gestione" {
+    usecase "Effettuare Login" as UC_Login
+    usecase "Gestire Dati Account" as UC_Dati
+    usecase "Visualizzare Profilo" as UC_View
+    usecase "Autenticazione Password" as UC_Auth
+    usecase "Logout" as UC_Logout
+
+  ' per fare il login DEVI passare dall'autenticazione
+    UC_Login ..> UC_Auth : visualizzazione
+    
+    giovanni --> UC_Login
+    giovanni --> UC_Dati
+    giovanni --> UC_View
+    giovanni --> UC_Logout
+}
+@enduml
