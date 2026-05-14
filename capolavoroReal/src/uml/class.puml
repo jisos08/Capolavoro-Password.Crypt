@@ -1,0 +1,27 @@
+@startuml
+
+class Utente {
+  - username: String
+  - password: String
+  + inserisciCredenziali()
+}
+
+class Sistema {
+  - statoSessione: Boolean
+  + verificaPassword(pass: String): Boolean
+  + effettuaLogin()
+  + effettuaLogout()
+}
+
+class Account {
+  - idAccount: int
+  - datiProfilo: String
+  + visualizzaDati()
+  + modificaDati()
+}
+
+' Relazioni tra le classi
+Utente "1" -- "1" Sistema : interagisce con >
+Sistema "1" -- "1" Account : gestisce >
+
+@enduml

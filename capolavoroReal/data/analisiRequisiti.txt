@@ -1,0 +1,93 @@
+Requisiti funzionali
+
+Il sistema deve permettere di:
+
+ Autenticazione
+Inserire una master password
+Verificare la password
+Bloccare accesso se errata
+
+(vedi LoginFrame + Storage.load())
+
+ Gestione password
+Aggiungere una nuova password
+Associare password a un servizio (es. Google)
+Visualizzare le password salvate
+
+(vedi ManagerFrame)
+
+ Salvataggio dati
+Salvare le password su file
+Caricare le password da file
+
+(vedi Storage)
+
+ Sicurezza
+Cifrare i dati prima del salvataggio
+Decifrare i dati quando vengono letti
+
+(vedi Crypto)
+
+ Aggiornamento dati
+Aggiornare il contenuto del vault
+Mostrare i dati aggiornati nella tabella
+ Requisiti non funzionali
+ Sicurezza
+Uso di algoritmo AES
+Generazione chiave con PBKDF2
+Protezione tramite password
+ Usabilità
+Interfaccia grafica semplice (Swing)
+Design moderno (FlatLaf)
+Messaggi di errore chiari
+ Prestazioni
+Accesso rapido ai dati
+Operazioni immediate (locale, no rete)
+ Compatibilità
+Applicazione desktop Java
+Funzionante su qualsiasi sistema con JVM
+ Persistenza
+Salvataggio su file locale (passwords.dat)
+ Input
+Master password (utente)
+Servizio (es. "Instagram")
+Password (utente)
+ Output
+Lista password salvate
+Messaggi:
+errore login
+salvataggio riuscito
+ Flusso principale (importantissimo per prof )
+Utente apre applicazione
+Inserisce master password
+Sistema:
+genera chiave
+prova a decifrare file
+Se corretto:
+apre vault
+Utente:
+aggiunge password
+salva
+Sistema:
+cifra dati
+salva su file
+
+
+
+
+
+
+
+Quando hai già il codice, devi:
+
+Capire cosa fa il sistema (NON come lo fa)
+
+ niente codice, solo funzionalità
+
+Dividere in:
+requisiti funzionali (cosa fa)
+requisiti non funzionali (come deve essere)
+Identificare:
+input
+output
+attori (utente)
