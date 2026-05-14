@@ -1,1 +1,20 @@
-<
+@startuml
+start
+:Avvia Applicazione;
+
+repeat
+  :Inserisci Password;
+  :Verifica Password;
+backward:Password Errata! (riprova);
+repeat while (Password Corretta?) is (No)
+
+:Connessione riuscita;
+
+if (È il primo accesso?) then (Sì)
+  :Crea Password e Nome Sito;
+else (No)
+endif
+
+:Visualizza Profilo;
+stop
+@enduml
